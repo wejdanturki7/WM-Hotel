@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 class Spaces {
   //height
+  static SizedBox spaceH4 = const SizedBox(
+    height: 4,
+  );
   static SizedBox spaceH8 = const SizedBox(
     height: 8,
   );
