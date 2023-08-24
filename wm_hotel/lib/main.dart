@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wm_hotel/widget/card_widget.dart';
 
 void main() {
   runApp(const MainApp());
@@ -12,7 +11,9 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: Scaffold(
-        body: CardWidget(),
+        body: Center(
+          child: SizedBox(),
+        ),
       ),
     );
   }
