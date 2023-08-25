@@ -5,7 +5,6 @@ import 'package:wm_hotel/widget/card_widget.dart';
 import 'package:wm_hotel/widget/home_screen_widgets/title_and_link.dart';
 import 'package:wm_hotel/widget/home_screen_widgets/titled_city_icon.dart';
 
-/////////////////////////////////TODO Scaffold will be removed ////////////
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -16,39 +15,77 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.15,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    AppColors.primaryColor,
-                    AppColors.secondaryColor,
-                  ],
-                ),
+    return Stack(
+      children: [
+        Positioned(
+          top: 0,
+          left: 0,
+          right: 0,
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height * 0.35,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  AppColors.primaryColor,
+                  AppColors.secondaryColor,
+                ],
               ),
             ),
           ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.90,
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30)),
-                color: AppColors.whiteColor,
-              ),
+        ),
+        Positioned(
+            top: 30,
+            left: 20,
+            right: 20,
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Hello Wejdan",
+                      style: TextStyle(
+                        color: AppColors.whiteColor,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Image.network(
+                      "https://cdn.icon-icons.com/icons2/2490/PNG/512/hotel_icon_150155.png",
+                      width: MediaQuery.of(context).size.width * 0.35,
+                      color: AppColors.whiteColor,
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 40,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                      
+                          borderRadius: BorderRadius.circular(100)),
+                      filled: true,
+                      fillColor: AppColors.whiteColor,
+                    ),
+                  ),
+                ),
+              ],
+            )),
+        Positioned(
+          bottom: 0,
+          left: 0,
+          right: 0,
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height * 0.65,
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+              color: AppColors.whiteColor,
+            ),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
               child: Column(
                 children: [
                   const Padding(
@@ -70,32 +107,38 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         Spaces.spaceW16,
                         const CityIcon(
-                          imgUrl: "assets/img/hotel.jpg",
+                          imgUrl:
+                              "https://static.thenounproject.com/png/164722-200.png",
                           city: "City",
                         ),
                         Spaces.spaceW8,
                         const CityIcon(
-                          imgUrl: "assets/img/hotel.jpg",
+                          imgUrl:
+                              "https://static.thenounproject.com/png/164722-200.png",
                           city: "City",
                         ),
                         Spaces.spaceW8,
                         const CityIcon(
-                          imgUrl: "assets/img/hotel.jpg",
+                          imgUrl:
+                              "https://static.thenounproject.com/png/164722-200.png",
                           city: "City",
                         ),
                         Spaces.spaceW8,
                         const CityIcon(
-                          imgUrl: "assets/img/hotel.jpg",
+                          imgUrl:
+                              "https://static.thenounproject.com/png/164722-200.png",
                           city: "City",
                         ),
                         Spaces.spaceW8,
                         const CityIcon(
-                          imgUrl: "assets/img/hotel.jpg",
+                          imgUrl:
+                              "https://static.thenounproject.com/png/164722-200.png",
                           city: "City",
                         ),
                         Spaces.spaceW8,
                         const CityIcon(
-                          imgUrl: "assets/img/hotel.jpg",
+                          imgUrl:
+                              "https://static.thenounproject.com/png/164722-200.png",
                           city: "City",
                         ),
                       ],
@@ -132,8 +175,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wm_hotel/utilities/ui_classes/appcolor.dart';
 import 'package:wm_hotel/utilities/ui_classes/spaces.dart';
 
 class CityIcon extends StatelessWidget {
@@ -16,7 +17,8 @@ class CityIcon extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: 35,
-          backgroundImage: AssetImage(
+          backgroundColor: AppColors.whiteColor,
+          backgroundImage: NetworkImage(
             imgUrl,
           ),
         ),

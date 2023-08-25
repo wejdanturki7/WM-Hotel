@@ -7,12 +7,6 @@ class OrdersScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        //TODO change it with Wejdan custom appbar
-        title: Text("My Booking"),
-        centerTitle: true,
-      ),
-    );
+    return Text("My Booking");
   }
 }
