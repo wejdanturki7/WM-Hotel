@@ -5,16 +5,22 @@ class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
     required this.buttonTitle,
+    required this.buttonWidth,
+    this.padding = 13,
+    this.fontSize = 20,
   });
 
   final String buttonTitle;
+  final double buttonWidth;
+  final double? padding;
+  final double? fontSize;
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {},
       child: Container(
-        width: MediaQuery.of(context).size.width - 40,
-        padding: const EdgeInsets.all(13),
+        width: buttonWidth,
+        padding: EdgeInsets.all(padding!),
         decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
@@ -26,7 +32,7 @@ class CustomButton extends StatelessWidget {
         child: Text(
           buttonTitle,
           textAlign: TextAlign.center,
-          style: const TextStyle(color: Colors.white, fontSize: 20.0),
+          style: TextStyle(color: Colors.white, fontSize: fontSize!),
         ),
       ),
     );

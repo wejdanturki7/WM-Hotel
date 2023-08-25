@@ -17,8 +17,7 @@ class HotelDetiels extends StatelessWidget {
           children: [
             const Text(
               "Shooting Star Motel", //TODO return hotel name
-              style:
-                  TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
             ),
             Spaces.spaceH32,
             const Text(
