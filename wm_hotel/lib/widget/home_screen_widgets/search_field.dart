@@ -23,8 +23,8 @@ class SearchField extends StatelessWidget {
               onPressed: () {},
             ),
           ),
-          border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(100)),
+          prefixIcon: const Icon(Icons.map_outlined),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(100)),
           filled: true,
           fillColor: AppColors.whiteColor,
         ),

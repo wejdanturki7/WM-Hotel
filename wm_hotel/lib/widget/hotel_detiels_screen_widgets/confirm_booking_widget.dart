@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wm_hotel/models/hotel_model.dart';
 import 'package:wm_hotel/utilities/ui_classes/appcolor.dart';
 import 'package:wm_hotel/utilities/ui_classes/spaces.dart';
 import 'package:wm_hotel/widget/button_widget.dart';
@@ -6,9 +7,10 @@ import 'package:wm_hotel/widget/button_widget.dart';
 class ConfirmBookingSection extends StatelessWidget {
   const ConfirmBookingSection({
     super.key,
+    required this.hotels,
   });
 
-  
+  final Hotel hotels;
 
   @override
   Widget build(BuildContext context) {
@@ -33,13 +35,13 @@ class ConfirmBookingSection extends StatelessWidget {
             children: [
               const Text("Start from"),
               Spaces.spaceH4,
-              const Row(
+              Row(
                 children: [
                   Text(
-                    "\$132",
-                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17),
+                    "${hotels.price} SR",
+                    style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 17),
                   ),
-                  Text(
+                  const Text(
                     "/night",
                     style: TextStyle(fontSize: 15),
                   ),
@@ -49,7 +51,7 @@ class ConfirmBookingSection extends StatelessWidget {
           ),
           CustomButton(
             buttonTitle: "Book Room",
-            buttonWidth: MediaQuery.of(context).size.width * 0.65,
+            buttonWidth: MediaQuery.of(context).size.width * 0.59,
             padding: 10,
             fontSize: 17,
             onPressed: () {},

@@ -19,7 +19,7 @@ class SupabaseService {
     final supabase = Supabase.instance.client;
     final rawHotels = await supabase
         .from('Hotel')
-        .select('id, name, description, city_id,img_url, review_id');
+        .select('id, name, description, city_id,img_url, review_id, price');
     final List<Hotel> hotels = [];
     for (final hotel in rawHotels) {
       hotels.add(Hotel.fromJson(hotel));

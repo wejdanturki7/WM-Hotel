@@ -55,10 +55,10 @@ class CardWidget extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
             ),
             Spaces.spaceH8,
-            const Row(
+            Row(
               children: [
                 Text(
-                  "\$120", //return price TODO
+                  "${hotels.price} SR",
                   style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
                 ),
                 Text(
