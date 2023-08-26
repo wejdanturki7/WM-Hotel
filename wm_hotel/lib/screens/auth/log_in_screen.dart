@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wm_hotel/screens/main_screen.dart';
 import 'package:wm_hotel/utilities/ui_classes/appcolor.dart';
 import 'package:wm_hotel/utilities/ui_classes/spaces.dart';
 import 'package:wm_hotel/widget/button_widget.dart';
@@ -120,7 +121,15 @@ class _LogInScreenState extends State<LogInScreen> {
                             email: emailController.text,
                             password: passwordController.text,
                           );
-                          print("yesss");
+                          if (context.mounted) {
+                            Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const MainScreen()),
+                                (route) {
+                              return false;
+                            });
+                          }
                         }
                       },
                     ),
