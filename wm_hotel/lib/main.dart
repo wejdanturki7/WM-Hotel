@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wm_hotel/screens/main_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:wm_hotel/screens/home_screen.dart';
 
@@ -18,7 +19,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: MainScreen(),
     );
   }
 }
