@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wm_hotel/screens/auth/log_in_screen.dart';
+import 'package:wm_hotel/utilities/extension/navigator.dart';
 import 'package:wm_hotel/utilities/ui_classes/appcolor.dart';
 import 'package:wm_hotel/utilities/ui_classes/spaces.dart';
 import 'package:wm_hotel/widget/button_widget.dart';
@@ -160,6 +162,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               email: emailController.text,
                               password: passwordController.text,
                             );
+                            if (context.mounted) {
+                              context.push(screen: LogInScreen());
+                            }
                           }
                         })
                   ],
