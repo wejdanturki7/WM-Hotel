@@ -50,8 +50,9 @@ class CardWidget extends StatelessWidget {
               style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
             ),
             Spaces.spaceH4,
-            const Text(
-              "St.Park 36, New York", //Return hotel city & location related to city table TODO
+            Text(
+              hotels
+                  .city!, //Return hotel city & location related to city table TODO
               style: TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
             ),
             Spaces.spaceH8,

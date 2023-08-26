@@ -16,7 +16,7 @@ class SupabaseService {
 
 //
   Future<List<Hotel>?> getHotels() async {
-    final rawHotels = await supabase.from('Hotel').select('*, City(*)');
+    final rawHotels = await supabase.from('Hotel').select('*');
     final List<Hotel> hotels = [];
     for (final hotel in rawHotels) {
       hotels.add(Hotel.fromJson(hotel));

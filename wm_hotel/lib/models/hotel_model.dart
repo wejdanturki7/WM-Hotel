@@ -1,5 +1,3 @@
-import 'package:csc_picker/model/select_status_model.dart';
-
 class Hotel {
   String? id;
   String? reviewId;
@@ -8,7 +6,7 @@ class Hotel {
   String? cityId;
   String? imgUrl;
   int? price;
-  City? city;
+  String? city;
 
   Hotel({
     this.id,
@@ -26,7 +24,7 @@ class Hotel {
     description = json['description'];
     cityId = json['city_id'];
     imgUrl = json['img_url'];
-    city = json['city'] != null ? new City.fromJson(json['City']) : null;
+    city = json['city'];
 
     price = json['price'];
   }
@@ -39,11 +37,7 @@ class Hotel {
     data['description'] = this.description;
     data['city_id'] = this.cityId;
     data['img_url'] = this.imgUrl;
-
-    if (this.city != null) {
-      data['city'] = this.city!.toJson();
-    }
-
+    data['city'] = this.city;
     data['price'] = this.price;
 
     return data;
