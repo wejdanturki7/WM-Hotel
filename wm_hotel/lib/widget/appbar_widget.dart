@@ -19,19 +19,18 @@ class WAppBar extends StatelessWidget {
     return Material(
       elevation: 10,
       child: Container(
-        height: context.getHeight() / 8,
+        height: context.getHeight() / 7,
         width: context.getWidth(),
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [AppColors.primaryColor, AppColors.secondaryColor],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
           ),
         ),
         child: Column(
           children: [
             Spaces.spaceH32,
             Spaces.spaceH32,
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Row(
@@ -56,10 +55,12 @@ class WAppBar extends StatelessWidget {
                                 fontWeight: FontWeight.w500,
                                 color: AppColors.whiteColor)),
                       ],
+
                     ),
-                  ),
-                ],
-              ),
+                  ],
+                ),
+                arrowBack ? Spaces.spaceW24 : const SizedBox(),
+              ],
             ),
           ],
         ),

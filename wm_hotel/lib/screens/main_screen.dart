@@ -11,15 +11,12 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  
   int index = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar:
-          index == 1 ? AppBar() : null, //TODO Wejdan appbar will be add here
       body: IndexedStack(
         index: index,
         children: const [
