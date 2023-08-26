@@ -70,6 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
           left: 0,
           right: 0,
           child: Container(
+            padding: const EdgeInsets.only(top: 10),
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * 0.65,
             decoration: BoxDecoration(
@@ -103,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Spaces.spaceH24,
-                  HotelsCardListView(),
+                  const HotelsCardListView(),
                 ],
               ),
             ),

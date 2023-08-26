@@ -123,9 +123,11 @@ class HoteleDetilesScreen extends StatelessWidget {
               ),
             ),
           ),
-          const Positioned(
+          Positioned(
             bottom: 0,
-            child: ConfirmBookingSection(),
+            child: ConfirmBookingSection(
+              hotels: hotels,
+            ),
           )
         ],
       ),
