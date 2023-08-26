@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wm_hotel/models/hotel_model.dart';
+import 'package:wm_hotel/screens/book_room_screen.dart';
+import 'package:wm_hotel/utilities/extension/navigator.dart';
 import 'package:wm_hotel/utilities/ui_classes/appcolor.dart';
 import 'package:wm_hotel/utilities/ui_classes/spaces.dart';
 import 'package:wm_hotel/widget/button_widget.dart';
@@ -54,7 +56,9 @@ class ConfirmBookingSection extends StatelessWidget {
             buttonWidth: MediaQuery.of(context).size.width * 0.59,
             padding: 10,
             fontSize: 17,
-            onPressed: () {},
+            onPressed: () {
+              context.push(screen: BookingRoomScreen(hotels: hotels,));
+            },
           ),
         ],
       ),

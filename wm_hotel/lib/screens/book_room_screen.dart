@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wm_hotel/models/hotel_model.dart';
 import 'package:wm_hotel/utilities/ui_classes/appcolor.dart';
 import 'package:wm_hotel/utilities/ui_classes/spaces.dart';
 import 'package:wm_hotel/widget/book_room_screen_widgets/coupon_field.dart';
@@ -7,7 +8,8 @@ import 'package:wm_hotel/widget/book_room_screen_widgets/payment_and_coupon.dart
 import 'package:wm_hotel/widget/button_widget.dart';
 
 class BookingRoomScreen extends StatelessWidget {
-  const BookingRoomScreen({super.key});
+  const BookingRoomScreen({super.key, required this.hotels});
+  final Hotel hotels;
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +24,17 @@ class BookingRoomScreen extends StatelessWidget {
             const EdgeInsets.only(left: 25, right: 25, top: 40, bottom: 140),
         child: Column(
           children: [
-            const HotelDetiels(),
+            HotelDetiels(
+              hotels: hotels,
+            ),
             Spaces.spaceH24,
             Divider(
               color: AppColors.blackColor,
             ),
             Spaces.spaceH32,
-            const PriceAndNigths(),
+            PriceAndNigths(
+              hotels: hotels,
+            ),
             Spaces.spaceH24,
             const CouponFiled(),
             Spaces.spaceH16,
@@ -59,6 +65,7 @@ class BookingRoomScreen extends StatelessWidget {
             CustomButton(
               buttonTitle: "Book now",
               buttonWidth: MediaQuery.of(context).size.width - 40,
+              onPressed: () {},
             ),
           ],
         ),
