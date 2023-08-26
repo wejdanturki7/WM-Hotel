@@ -30,7 +30,6 @@ class WAppBar extends StatelessWidget {
           children: [
             Spaces.spaceH32,
             Spaces.spaceH32,
-
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Row(
@@ -55,13 +54,12 @@ class WAppBar extends StatelessWidget {
                                 fontWeight: FontWeight.w500,
                                 color: AppColors.whiteColor)),
                       ],
-
                     ),
-                  ],
-                ),
-                arrowBack ? Spaces.spaceW24 : const SizedBox(),
-              ],
-            ),
+                  ),
+                  arrowBack ? Spaces.spaceW24 : const SizedBox(),
+                ],
+              ),
+            )
           ],
         ),
       ),
