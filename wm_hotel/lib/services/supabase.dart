@@ -55,7 +55,6 @@ class SupabaseService {
   Future<List<Hotel>?> searchHotelsByName(String name) async {
     final rawHotels = await supabase
         .from('Hotel')
-
         .select('id, name, description, city_id,img_url, review_id')
         .eq('name', name);
 

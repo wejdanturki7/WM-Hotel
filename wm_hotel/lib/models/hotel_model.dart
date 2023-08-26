@@ -8,8 +8,16 @@ class Hotel {
   String? cityId;
   String? imgUrl;
   int? price;
+  City? city;
 
-  Hotel({this.id, this.name, this.description, this.city, this.imgUrl, this.price,this.city});
+  Hotel({
+    this.id,
+    this.name,
+    this.description,
+    this.city,
+    this.imgUrl,
+    this.price,
+  });
 
   Hotel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -18,11 +26,9 @@ class Hotel {
     description = json['description'];
     cityId = json['city_id'];
     imgUrl = json['img_url'];
-
     city = json['city'] != null ? new City.fromJson(json['City']) : null;
 
     price = json['price'];
-
   }
 
   Map<String, dynamic> toJson() {
