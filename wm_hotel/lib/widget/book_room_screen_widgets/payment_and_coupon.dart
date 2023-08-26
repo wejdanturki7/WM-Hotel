@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:wm_hotel/models/hotel_model.dart';
 
-class  PriceAndNigths extends StatelessWidget {
+class PriceAndNigths extends StatelessWidget {
   const PriceAndNigths({
     super.key,
+    required this.hotels,
   });
-
+  final Hotel hotels;
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
         Text(
-          "\$120", //TODO return price of 1 night
+          "${hotels.price} SR ",
           style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17),
         ),
         Text(
