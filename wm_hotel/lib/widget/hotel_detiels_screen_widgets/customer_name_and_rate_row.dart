@@ -3,10 +3,12 @@ import 'package:wm_hotel/utilities/ui_classes/spaces.dart';
 
 class CustomerNameAndRate extends StatelessWidget {
   const CustomerNameAndRate({
-    super.key, required this.name, required this.rate,
+    super.key,
+    required this.name,
+    required this.rate,
   });
 
-  final String name ;
+  final String name;
   final double rate;
 
   @override
@@ -16,7 +18,7 @@ class CustomerNameAndRate extends StatelessWidget {
         Spaces.spaceH32,
         Text(
           name, //TODO customer name
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.bold,
           ),

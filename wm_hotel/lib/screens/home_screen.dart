@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:wm_hotel/utilities/ui_classes/appcolor.dart';
 import 'package:wm_hotel/utilities/ui_classes/spaces.dart';
-import 'package:wm_hotel/widget/card_widget.dart';
+import 'package:wm_hotel/widget/home_screen_widgets/city_listview.dart';
+import 'package:wm_hotel/widget/home_screen_widgets/hotels_card_lisview.dart';
 import 'package:wm_hotel/widget/home_screen_widgets/search_field.dart';
 import 'package:wm_hotel/widget/home_screen_widgets/title_and_link.dart';
-import 'package:wm_hotel/widget/home_screen_widgets/titled_city_icon.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   )
                 ],
               ),
-              SearchField(),
+              const SearchField(),
             ],
           ),
         ),
@@ -91,50 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Spaces.spaceH16,
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      //TODO return cities from database as City icon using listview bulider
-                      children: [
-                        Spaces.spaceW16,
-                        const CityIcon(
-                          imgUrl:
-                              "https://static.thenounproject.com/png/164722-200.png",
-                          city: "City",
-                        ),
-                        Spaces.spaceW8,
-                        const CityIcon(
-                          imgUrl:
-                              "https://static.thenounproject.com/png/164722-200.png",
-                          city: "City",
-                        ),
-                        Spaces.spaceW8,
-                        const CityIcon(
-                          imgUrl:
-                              "https://static.thenounproject.com/png/164722-200.png",
-                          city: "City",
-                        ),
-                        Spaces.spaceW8,
-                        const CityIcon(
-                          imgUrl:
-                              "https://static.thenounproject.com/png/164722-200.png",
-                          city: "City",
-                        ),
-                        Spaces.spaceW8,
-                        const CityIcon(
-                          imgUrl:
-                              "https://static.thenounproject.com/png/164722-200.png",
-                          city: "City",
-                        ),
-                        Spaces.spaceW8,
-                        const CityIcon(
-                          imgUrl:
-                              "https://static.thenounproject.com/png/164722-200.png",
-                          city: "City",
-                        ),
-                      ],
-                    ),
-                  ),
+                  const CiteisListView(),
                   Spaces.spaceH32,
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20),
@@ -144,24 +101,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Spaces.spaceH24,
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        Spaces.spaceW24,
-                        CardWidget(),
-                        Spaces.spaceW24,
-                        CardWidget(),
-                        Spaces.spaceW24,
-                        CardWidget(),
-                        Spaces.spaceW24,
-                        CardWidget(),
-                        Spaces.spaceW24,
-                        CardWidget(),
-                        Spaces.spaceW24,
-                      ],
-                    ),
-                  ),
+                  HotelsCardListView(),
                 ],
               ),
             ),
@@ -172,13 +112,11 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-/**
- * const CityIcon(
-                          imgUrl:
-                              "https://static.thenounproject.com/png/164722-200.png",
-                          city: "City",
-                        ),
- */
+
+
+
+
+
 
 /**
   CSCPicker(

@@ -8,13 +8,15 @@ class ConfirmBookingSection extends StatelessWidget {
     super.key,
   });
 
+  
+
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         color: AppColors.whiteColor,
         boxShadow: const [
-            BoxShadow(
+          BoxShadow(
               color: Color.fromARGB(255, 205, 205, 205), //New
               blurRadius: 25.0,
               offset: Offset(0, -5))
@@ -35,8 +37,7 @@ class ConfirmBookingSection extends StatelessWidget {
                 children: [
                   Text(
                     "\$132",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w600, fontSize: 17),
+                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17),
                   ),
                   Text(
                     "/night",
@@ -51,6 +52,7 @@ class ConfirmBookingSection extends StatelessWidget {
             buttonWidth: MediaQuery.of(context).size.width * 0.65,
             padding: 10,
             fontSize: 17,
+            onPressed: () {},
           ),
         ],
       ),

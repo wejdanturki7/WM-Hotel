@@ -9,7 +9,7 @@ extension NavigatorCustom on BuildContext {
         ));
   }
 
-  pop({required Widget screen}) {
+  pop() {
     return Navigator.pop(this);
   }
 
