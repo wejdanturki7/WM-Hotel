@@ -26,16 +26,39 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     final supabase = Supabase.instance.client;
     return Scaffold(
-      body: Stack(children: [
-        Positioned(
-          top: 0,
-          child: Image.asset(
-            "assets/img/hotel.jpg",
-            fit: BoxFit.fill,
-            width: MediaQuery.of(context).size.width,
+      body: Stack(
+        children: [
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.35,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    AppColors.primaryColor,
+                    AppColors.secondaryColor,
+                  ],
+                ),
+              ),
+            ),
           ),
-        ),
-        Positioned(
+          Positioned(
+            top: 50,
+            child: IconButton(
+              icon: const Icon(
+                Icons.arrow_back,
+                size: 30,
+              ),
+              color: AppColors.whiteColor,
+              onPressed: () {
+                context.pop();
+              },
+            ),
+          ),
+          Positioned(
             bottom: 0,
             left: 0,
             right: 0,
@@ -44,7 +67,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               child: Container(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
-                height: MediaQuery.of(context).size.height * 0.67,
+                height: MediaQuery.of(context).size.height * 0.75,
                 decoration: BoxDecoration(
                     borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(25),
@@ -140,38 +163,43 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       width: MediaQuery.of(context).size.width - 50,
                       height: 40,
                       child: TextField(
-                          controller: passwordController,
-                          obscureText: true,
-                          decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                              hintText: 'Reenter your passowrd',
-                              prefix: Padding(
-                                padding: EdgeInsets.only(top: 50),
-                                child: Icon(Icons.lock_outline),
-                              ))),
+                        controller: passwordController,
+                        obscureText: true,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          hintText: 'Rewrite your passowrd',
+                          prefix: Padding(
+                            padding: EdgeInsets.only(top: 50),
+                            child: Icon(Icons.lock_outline),
+                          ),
+                        ),
+                      ),
                     ),
                     Spaces.spaceH32,
                     CustomButton(
-                        buttonTitle: 'Sign up',
-                        buttonWidth: MediaQuery.of(context).size.width - 50,
-                        onPressed: () async {
-                          if (emailController.text.isNotEmpty &&
-                              passwordController.text.isNotEmpty) {
-                            // Signing up ...
-                            await supabase.auth.signUp(
-                              email: emailController.text,
-                              password: passwordController.text,
-                            );
-                            if (context.mounted) {
-                              context.push(screen: LogInScreen());
-                            }
+                      buttonTitle: 'Sign up',
+                      buttonWidth: MediaQuery.of(context).size.width - 50,
+                      onPressed: () async {
+                        if (emailController.text.isNotEmpty &&
+                            passwordController.text.isNotEmpty) {
+                          // Signing up ...
+                          await supabase.auth.signUp(
+                            email: emailController.text,
+                            password: passwordController.text,
+                          );
+                          if (context.mounted) {
+                            context.push(screen: LogInScreen());
                           }
-                        })
+                        }
+                      },
+                    ),
                   ],
                 ),
               ),
-            ))
-      ]),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

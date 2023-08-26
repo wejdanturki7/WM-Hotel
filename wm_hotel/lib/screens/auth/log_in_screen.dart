@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:wm_hotel/screens/auth/sign_up_screen.dart';
 import 'package:wm_hotel/screens/main_screen.dart';
+import 'package:wm_hotel/utilities/extension/navigator.dart';
 import 'package:wm_hotel/utilities/ui_classes/appcolor.dart';
 import 'package:wm_hotel/utilities/ui_classes/spaces.dart';
 import 'package:wm_hotel/widget/button_widget.dart';
@@ -25,14 +27,24 @@ class _LogInScreenState extends State<LogInScreen> {
   Widget build(BuildContext context) {
     final supabase = Supabase.instance.client;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           Positioned(
             top: 0,
-            child: Image.asset(
-              "assets/img/hotel.jpg",
-              fit: BoxFit.fill,
+            left: 0,
+            right: 0,
+            child: Container(
               width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.35,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    AppColors.primaryColor,
+                    AppColors.secondaryColor,
+                  ],
+                ),
+              ),
             ),
           ),
           Positioned(
@@ -44,7 +56,7 @@ class _LogInScreenState extends State<LogInScreen> {
               child: Container(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
-                height: MediaQuery.of(context).size.height * 0.67,
+                height: MediaQuery.of(context).size.height * 0.75,
                 decoration: BoxDecoration(
                     borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(25),
@@ -108,6 +120,22 @@ class _LogInScreenState extends State<LogInScreen> {
                                 padding: EdgeInsets.only(top: 50),
                                 child: Icon(Icons.lock_outline),
                               ))),
+                    ),
+                    Spaces.spaceH16,
+                    InkWell(
+                      child: Center(
+                        child: Text(
+                          "Create a new account",
+                          style: TextStyle(
+                            color: AppColors.primaryColor,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      onTap: () {
+                        context.push(screen: SignUpScreen());
+                      },
                     ),
                     const Spacer(),
                     CustomButton(
