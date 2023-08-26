@@ -1,6 +1,7 @@
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:wm_hotel/models/city_model.dart';
 import 'package:wm_hotel/models/hotel_model.dart';
+import 'package:wm_hotel/models/reservation_model.dart';
 
 class SupabaseService {
   static final supabase = Supabase.instance.client;
@@ -17,6 +18,15 @@ class SupabaseService {
 //
   Future<List<Hotel>?> getHotels() async {
     final rawHotels = await supabase.from('Hotel').select('*');
+    final List<Hotel> hotels = [];
+    for (final hotel in rawHotels) {
+      hotels.add(Hotel.fromJson(hotel));
+    }
+    return hotels;
+  }
+
+  Future<List<Hotel>?> getHotelsByCity(String city) async {
+    final rawHotels = await supabase.from('Hotel').select('*').eq('city', city);
     final List<Hotel> hotels = [];
     for (final hotel in rawHotels) {
       hotels.add(Hotel.fromJson(hotel));
@@ -52,15 +62,17 @@ class SupabaseService {
   // }
 
   Future<List<Hotel>?> searchHotelsByName(String name) async {
-    final rawHotels = await supabase
-        .from('Hotel')
-        .select('id, name, description, city_id,img_url, review_id')
-        .eq('name', name);
+    final rawHotels = await supabase.from('Hotel').select('*').eq('name', name);
 
     final List<Hotel> hotels = [];
     for (final hotel in rawHotels) {
       hotels.add(Hotel.fromJson(hotel));
     }
     return hotels;
+  }
+
+  Future insertReservation(Reservation reservation) async {
+    final supabase = Supabase.instance.client;
+    await supabase.from('Reservation').insert(reservation.toJson());
   }
 }

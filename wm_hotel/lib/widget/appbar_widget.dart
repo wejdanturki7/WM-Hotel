@@ -30,27 +30,32 @@ class WAppBar extends StatelessWidget {
           children: [
             Spaces.spaceH32,
             Spaces.spaceH32,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                arrowBack
-                    ? IconButton(
-                        onPressed: () {
-                          context.pop();
-                        },
-                        icon: Icon(
-                          Icons.arrow_back_ios,
-                          color: AppColors.whiteColor,
-                        ))
-                    : const SizedBox(),
-                Column(
-                  children: [
-                    Text(
-                      title,
-                      style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.whiteColor),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Row(
+                children: [
+                  arrowBack
+                      ? IconButton(
+                          onPressed: () {
+                            context.pop();
+                          },
+                          icon: Icon(
+                            Icons.arrow_back_ios,
+                            color: AppColors.whiteColor,
+                          ))
+                      : SizedBox(),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 100),
+                    child: Column(
+                      children: [
+                        Text(title,
+                            style: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w500,
+                                color: AppColors.whiteColor)),
+                      ],
+
                     ),
                   ],
                 ),

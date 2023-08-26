@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wm_hotel/models/hotel_model.dart';
+import 'package:wm_hotel/models/reservation_model.dart';
+import 'package:wm_hotel/services/supabase.dart';
 import 'package:wm_hotel/utilities/ui_classes/appcolor.dart';
 import 'package:wm_hotel/utilities/ui_classes/spaces.dart';
 import 'package:wm_hotel/widget/appbar_widget.dart';
@@ -35,6 +37,8 @@ class BookingRoomScreen extends StatelessWidget {
                   Divider(
                     color: AppColors.blackColor,
                   ),
+
+
                   Spaces.spaceH32,
                   PriceAndNigths(
                     hotels: hotels,
@@ -69,10 +73,13 @@ class BookingRoomScreen extends StatelessWidget {
                   CustomButton(
                     buttonTitle: "Book now",
                     buttonWidth: MediaQuery.of(context).size.width - 40,
-                    onPressed: () {},
+                    onPressed: () {   SupabaseService().insertReservation(new Reservation(
+                  hotelId: hotels.id,
+                ));},
                   ),
                 ],
               ),
+
             ),
           ),
         ],

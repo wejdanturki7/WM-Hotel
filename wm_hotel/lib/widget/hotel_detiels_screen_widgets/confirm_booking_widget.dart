@@ -42,11 +42,13 @@ class ConfirmBookingSection extends StatelessWidget {
                   Text(
                     "${hotels.price} SR",
                     style: const TextStyle(
-                        fontWeight: FontWeight.w600, fontSize: 17),
+
+                        fontWeight: FontWeight.w600, fontSize: 10),
+
                   ),
                   const Text(
                     "/night",
-                    style: TextStyle(fontSize: 15),
+                    style: TextStyle(fontSize: 10),
                   ),
                 ],
               ),

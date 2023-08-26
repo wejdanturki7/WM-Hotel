@@ -6,9 +6,8 @@ import 'package:wm_hotel/widget/card_widget.dart';
 
 class HotelsCardListView extends StatelessWidget {
   const HotelsCardListView({
-    super.key, 
+    super.key,
   });
-
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +29,10 @@ class HotelsCardListView extends StatelessWidget {
                     child: CardWidget(
                       hotels: hotels,
                       onTap: () {
-                        context.push(screen: HoteleDetilesScreen(hotels: hotels,));
+                        context.push(
+                            screen: HoteleDetilesScreen(
+                          hotels: hotels,
+                        ));
                       },
                     ),
                   ),

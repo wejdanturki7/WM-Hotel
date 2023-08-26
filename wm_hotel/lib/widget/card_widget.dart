@@ -30,7 +30,7 @@ class CardWidget extends StatelessWidget {
           ),
         ),
         width: MediaQuery.of(context).size.width * 0.5,
-        height: 300,
+        height: 600,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -38,7 +38,7 @@ class CardWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(15.0),
               child: Image.network(
                 hotels.imgUrl!, //Return imge URL from database
-                fit: BoxFit.fitHeight,
+                fit: BoxFit.cover,
                 width: 200,
                 height: 200,
               ),
