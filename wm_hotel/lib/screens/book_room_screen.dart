@@ -56,7 +56,7 @@ class BookingRoomScreen extends StatelessWidget {
               ],
             ),
             const Spacer(),
-             CustomButton(
+            CustomButton(
               buttonTitle: "Book now",
               buttonWidth: MediaQuery.of(context).size.width - 40,
             ),

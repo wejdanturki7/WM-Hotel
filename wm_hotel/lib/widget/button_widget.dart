@@ -8,16 +8,18 @@ class CustomButton extends StatelessWidget {
     required this.buttonWidth,
     this.padding = 13,
     this.fontSize = 20,
+    this.onPressed,
   });
 
   final String buttonTitle;
   final double buttonWidth;
   final double? padding;
   final double? fontSize;
+  final Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onPressed!,
       child: Container(
         width: buttonWidth,
         padding: EdgeInsets.all(padding!),
