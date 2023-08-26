@@ -4,12 +4,12 @@ import 'package:wm_hotel/utilities/ui_classes/spaces.dart';
 import 'package:wm_hotel/widget/button_widget.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-class SignUpScreen extends StatefulWidget {
+class LogInScreen extends StatefulWidget {
   @override
-  _SignUpScreenState createState() => _SignUpScreenState();
+  _LogInScreenState createState() => _LogInScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _LogInScreenState extends State<LogInScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
@@ -53,7 +53,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   children: [
                     Center(
                       child: Text(
-                        "Create New Account",
+                        "Welcome Back",
                         style: TextStyle(
                             fontSize: 28,
                             fontWeight: FontWeight.bold,
@@ -61,27 +61,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                     Spaces.spaceH32,
-                    Text(
-                      "Name",
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.greyColor),
-                    ),
-                    Spaces.spaceH8,
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width - 50,
-                      height: 40,
-                      child: const TextField(
-                          decoration: InputDecoration(
-                              border: OutlineInputBorder(),
-                              hintText: 'Enter your name',
-                              prefix: Padding(
-                                padding: EdgeInsets.only(top: 50),
-                                child: Icon(Icons.email_rounded),
-                              ))),
-                    ),
-                    Spaces.spaceH24,
                     Text(
                       "Email address",
                       style: TextStyle(
@@ -115,9 +94,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     SizedBox(
                       width: MediaQuery.of(context).size.width - 50,
                       height: 40,
-                      child: const TextField(
+                      child: TextField(
+                          controller: passwordController,
                           obscureText: true,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                               border: OutlineInputBorder(),
                               hintText: 'Enter your password',
                               prefix: Padding(
@@ -125,41 +105,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 child: Icon(Icons.lock_outline),
                               ))),
                     ),
-                    Spaces.spaceH24,
-                    Text(
-                      "Confirm password",
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.greyColor),
-                    ),
-                    Spaces.spaceH8,
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width - 50,
-                      height: 40,
-                      child: TextField(
-                          controller: passwordController,
-                          obscureText: true,
-                          decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                              hintText: 'Reenter your passowrd',
-                              prefix: Padding(
-                                padding: EdgeInsets.only(top: 50),
-                                child: Icon(Icons.lock_outline),
-                              ))),
-                    ),
-                    Spaces.spaceH32,
+                    const Spacer(),
                     CustomButton(
-                        buttonTitle: 'Sign up',
+                        buttonTitle: 'Log In',
                         buttonWidth: MediaQuery.of(context).size.width - 50,
                         onPressed: () async {
                           if (emailController.text.isNotEmpty &&
                               passwordController.text.isNotEmpty) {
-                            // Signing up ...
-                            await supabase.auth.signUp(
+                            // Signing in ...
+                            await supabase.auth.signInWithPassword(
                               email: emailController.text,
                               password: passwordController.text,
                             );
+                            print("yesss");
                           }
                         })
                   ],
