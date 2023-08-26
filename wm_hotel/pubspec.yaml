@@ -12,6 +12,8 @@ dependencies:
   cupertino_icons: ^1.0.0
   csc_picker: ^0.2.7
 
+  supabase_flutter: ^1.10.14
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
