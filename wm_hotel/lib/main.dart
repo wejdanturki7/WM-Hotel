@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:wm_hotel/screens/auth/sign_up_screen.dart';
+
+import 'package:wm_hotel/screens/home_screen.dart';
+
 
 void main() async {
   await Supabase.initialize(
@@ -16,8 +16,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: SignUpScreen(),
+
+
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomeScreen(),
+
     );
   }
 }

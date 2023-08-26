@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.0
+  csc_picker: ^0.2.7
 
   supabase_flutter: ^1.10.14
 
