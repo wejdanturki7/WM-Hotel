@@ -1,6 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:wm_hotel/screens/auth/log_in_screen.dart';
 import 'package:wm_hotel/screens/main_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:wm_hotel/services/supabase.dart';
 
 void main() async {
   await Supabase.initialize(
@@ -11,14 +15,40 @@ void main() async {
   runApp(const MainApp());
 }
 
-class MainApp extends StatelessWidget {
+class MainApp extends StatefulWidget {
   const MainApp({super.key});
 
   @override
+  State<MainApp> createState() => _MainAppState();
+}
+
+class _MainAppState extends State<MainApp> {
+  bool canGoHome = false;
+  StreamSubscription? listen;
+
+  @override
+  void initState() {
+    SupabaseService.supabase.auth.onAuthStateChange.listen((data) {
+      final AuthChangeEvent event = data.event;
+      if (event == AuthChangeEvent.signedIn) {
+        canGoHome = true;
+        setState(() {});
+      }
+
+      if (event == AuthChangeEvent.signedOut) {
+        canGoHome = false;
+        setState(() {});
+      }
+    });
+
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainScreen(),
+      home: canGoHome ? const MainScreen() : LogInScreen(),
     );
   }
 }

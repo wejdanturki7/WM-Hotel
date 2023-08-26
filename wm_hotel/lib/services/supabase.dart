@@ -1,6 +1,5 @@
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:wm_hotel/models/city_model.dart';
-import 'package:wm_hotel/models/customer_model.dart';
 import 'package:wm_hotel/models/hotel_model.dart';
 
 class SupabaseService {

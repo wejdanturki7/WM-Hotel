@@ -1,10 +1,6 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:wm_hotel/screens/home_screen.dart';
 import 'package:wm_hotel/screens/orders_screen.dart';
-import 'package:wm_hotel/services/supabase.dart';
 import 'package:wm_hotel/utilities/ui_classes/appcolor.dart';
 
 class MainScreen extends StatefulWidget {
@@ -15,29 +11,8 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  bool canGoHome = false;
-  StreamSubscription? listen;
-
+  
   int index = 0;
-  @override
-  void initState() {
-    SupabaseService.supabase.auth.onAuthStateChange.listen((data) {
-      final AuthChangeEvent event = data.event;
-      if (event == AuthChangeEvent.signedIn) {
-        canGoHome = true;
-        setState(() {});
-      }
-
-      if (event == AuthChangeEvent.signedOut) {
-        canGoHome = false;
-        setState(() {});
-      }
-    });
-
-    super.initState();
-  }
-
-//canGoHome ? const HomeScreen() : const LogInScreen(),
 
   @override
   Widget build(BuildContext context) {

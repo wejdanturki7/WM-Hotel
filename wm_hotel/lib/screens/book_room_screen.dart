@@ -14,6 +14,7 @@ class BookingRoomScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         //TODO Change appbar to custom one
         title: const Text("Book Room"),
