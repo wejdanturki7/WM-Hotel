@@ -16,13 +16,16 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: index == 1 ? AppBar() : null, //TODO Wejdan appbar will be add here
+      resizeToAvoidBottomInset: false,
+      appBar:
+          index == 1 ? AppBar() : null, //TODO Wejdan appbar will be add here
       body: IndexedStack(
         index: index,
         children: const [
           HomeScreen(),
           OrdersScreen(), //
         ],
+        
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,

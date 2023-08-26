@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wm_hotel/utilities/ui_classes/appcolor.dart';
 import 'package:wm_hotel/utilities/ui_classes/spaces.dart';
 import 'package:wm_hotel/widget/card_widget.dart';
+import 'package:wm_hotel/widget/home_screen_widgets/search_field.dart';
 import 'package:wm_hotel/widget/home_screen_widgets/title_and_link.dart';
 import 'package:wm_hotel/widget/home_screen_widgets/titled_city_icon.dart';
 
@@ -35,43 +36,33 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         Positioned(
-            top: 30,
-            left: 20,
-            right: 20,
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Hello Wejdan",
-                      style: TextStyle(
-                        color: AppColors.whiteColor,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Image.network(
-                      "https://cdn.icon-icons.com/icons2/2490/PNG/512/hotel_icon_150155.png",
-                      width: MediaQuery.of(context).size.width * 0.35,
+          top: 30,
+          left: 20,
+          right: 20,
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Hello Wejdan", //TODO return user name from database here
+                    style: TextStyle(
                       color: AppColors.whiteColor,
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 40,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                      
-                          borderRadius: BorderRadius.circular(100)),
-                      filled: true,
-                      fillColor: AppColors.whiteColor,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                ),
-              ],
-            )),
+                  Image.network(
+                    "https://cdn.icon-icons.com/icons2/2490/PNG/512/hotel_icon_150155.png",
+                    width: MediaQuery.of(context).size.width * 0.35,
+                    color: AppColors.whiteColor,
+                  )
+                ],
+              ),
+              SearchField(),
+            ],
+          ),
+        ),
         Positioned(
           bottom: 0,
           left: 0,
@@ -180,6 +171,14 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+/**
+ * const CityIcon(
+                          imgUrl:
+                              "https://static.thenounproject.com/png/164722-200.png",
+                          city: "City",
+                        ),
+ */
 
 /**
   CSCPicker(
