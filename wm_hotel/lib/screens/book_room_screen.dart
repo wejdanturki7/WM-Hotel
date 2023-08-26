@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wm_hotel/models/hotel_model.dart';
+import 'package:wm_hotel/models/reservation_model.dart';
+import 'package:wm_hotel/services/supabase.dart';
 import 'package:wm_hotel/utilities/ui_classes/appcolor.dart';
 import 'package:wm_hotel/utilities/ui_classes/spaces.dart';
 import 'package:wm_hotel/widget/book_room_screen_widgets/coupon_field.dart';
@@ -63,10 +65,16 @@ class BookingRoomScreen extends StatelessWidget {
               ],
             ),
             const Spacer(),
+
+            ///TODO
             CustomButton(
               buttonTitle: "Book now",
               buttonWidth: MediaQuery.of(context).size.width - 40,
-              onPressed: () {},
+              onPressed: () {
+                SupabaseService().insertReservation(new Reservation(
+                  hotelId: hotels.id,
+                ));
+              },
             ),
           ],
         ),

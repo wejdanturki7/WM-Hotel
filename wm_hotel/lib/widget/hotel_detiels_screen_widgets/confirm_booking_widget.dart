@@ -41,11 +41,12 @@ class ConfirmBookingSection extends StatelessWidget {
                 children: [
                   Text(
                     "${hotels.price} SR",
-                    style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 17),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w600, fontSize: 10),
                   ),
                   const Text(
                     "/night",
-                    style: TextStyle(fontSize: 15),
+                    style: TextStyle(fontSize: 10),
                   ),
                 ],
               ),
@@ -57,7 +58,10 @@ class ConfirmBookingSection extends StatelessWidget {
             padding: 10,
             fontSize: 17,
             onPressed: () {
-              context.push(screen: BookingRoomScreen(hotels: hotels,));
+              context.push(
+                  screen: BookingRoomScreen(
+                hotels: hotels,
+              ));
             },
           ),
         ],

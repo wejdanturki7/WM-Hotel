@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wm_hotel/utilities/extension/navigator.dart';
 import 'package:wm_hotel/utilities/ui_classes/appcolor.dart';
 import 'package:wm_hotel/utilities/ui_classes/spaces.dart';
 import 'package:wm_hotel/utilities/extension/screen.dart';
@@ -37,7 +38,9 @@ class WAppBar extends StatelessWidget {
                 children: [
                   arrowBack
                       ? IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            context.pop();
+                          },
                           icon: Icon(
                             Icons.arrow_back_ios,
                             color: AppColors.whiteColor,
