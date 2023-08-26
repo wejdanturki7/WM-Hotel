@@ -18,6 +18,9 @@ class Spaces {
     height: 32,
   );
 
+  static SizedBox spaceH40 = const SizedBox(
+    height: 40,
+  );
   ///// width
   static SizedBox spaceW8 = const SizedBox(
     width: 8,
@@ -33,5 +36,8 @@ class Spaces {
   );
   static SizedBox spaceW170 = const SizedBox(
     width: 170,
+  );
+  static SizedBox spaceW40 = const SizedBox(
+    width: 40,
   );
 }

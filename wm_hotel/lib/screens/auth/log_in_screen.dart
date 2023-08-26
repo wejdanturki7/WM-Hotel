@@ -24,16 +24,17 @@ class _LogInScreenState extends State<LogInScreen> {
   Widget build(BuildContext context) {
     final supabase = Supabase.instance.client;
     return Scaffold(
-      body: Stack(children: [
-        Positioned(
-          top: 0,
-          child: Image.asset(
-            "assets/img/hotel.jpg",
-            fit: BoxFit.fill,
-            width: MediaQuery.of(context).size.width,
+      body: Stack(
+        children: [
+          Positioned(
+            top: 0,
+            child: Image.asset(
+              "assets/img/hotel.jpg",
+              fit: BoxFit.fill,
+              width: MediaQuery.of(context).size.width,
+            ),
           ),
-        ),
-        Positioned(
+          Positioned(
             bottom: 0,
             left: 0,
             right: 0,
@@ -73,14 +74,16 @@ class _LogInScreenState extends State<LogInScreen> {
                       width: MediaQuery.of(context).size.width - 50,
                       height: 40,
                       child: TextField(
-                          controller: emailController,
-                          decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                              hintText: 'Enter your email address',
-                              prefix: Padding(
-                                padding: EdgeInsets.only(top: 50),
-                                child: Icon(Icons.email_rounded),
-                              ))),
+                        controller: emailController,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          hintText: 'Enter your email address',
+                          prefix: Padding(
+                            padding: EdgeInsets.only(top: 50),
+                            child: Icon(Icons.email_rounded),
+                          ),
+                        ),
+                      ),
                     ),
                     Spaces.spaceH24,
                     Text(
@@ -107,24 +110,27 @@ class _LogInScreenState extends State<LogInScreen> {
                     ),
                     const Spacer(),
                     CustomButton(
-                        buttonTitle: 'Log In',
-                        buttonWidth: MediaQuery.of(context).size.width - 50,
-                        onPressed: () async {
-                          if (emailController.text.isNotEmpty &&
-                              passwordController.text.isNotEmpty) {
-                            // Signing in ...
-                            await supabase.auth.signInWithPassword(
-                              email: emailController.text,
-                              password: passwordController.text,
-                            );
-                            print("yesss");
-                          }
-                        })
+                      buttonTitle: 'Log In',
+                      buttonWidth: MediaQuery.of(context).size.width - 50,
+                      onPressed: () async {
+                        if (emailController.text.isNotEmpty &&
+                            passwordController.text.isNotEmpty) {
+                          // Signing in ...
+                          await supabase.auth.signInWithPassword(
+                            email: emailController.text,
+                            password: passwordController.text,
+                          );
+                          print("yesss");
+                        }
+                      },
+                    ),
                   ],
                 ),
               ),
-            ))
-      ]),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
