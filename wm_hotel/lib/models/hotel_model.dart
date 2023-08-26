@@ -1,22 +1,28 @@
+import 'package:csc_picker/model/select_status_model.dart';
+
 class Hotel {
   String? id;
   String? reviewId;
   String? name;
   String? description;
-  String? city;
+  String? cityId;
   String? imgUrl;
   int? price;
 
-  Hotel({this.id, this.name, this.description, this.city, this.imgUrl, this.price});
+  Hotel({this.id, this.name, this.description, this.city, this.imgUrl, this.price,this.city});
 
   Hotel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     reviewId = json['review_id'];
     name = json['name'];
     description = json['description'];
-    city = json['city'];
+    cityId = json['city_id'];
     imgUrl = json['img_url'];
+
+    city = json['city'] != null ? new City.fromJson(json['City']) : null;
+
     price = json['price'];
+
   }
 
   Map<String, dynamic> toJson() {
@@ -25,9 +31,15 @@ class Hotel {
     data['review_id'] = this.reviewId;
     data['name'] = this.name;
     data['description'] = this.description;
-    data['city'] = this.city;
+    data['city_id'] = this.cityId;
     data['img_url'] = this.imgUrl;
+
+    if (this.city != null) {
+      data['city'] = this.city!.toJson();
+    }
+
     data['price'] = this.price;
+
     return data;
   }
 }

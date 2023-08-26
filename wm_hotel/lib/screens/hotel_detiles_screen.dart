@@ -74,8 +74,8 @@ class HoteleDetilesScreen extends StatelessWidget {
                       ],
                     ),
                     Spaces.spaceH8,
-                    const Text(
-                      "Baduong, Indonesia", //TODO hotel city
+                    Text(
+                      hotels.city.toString(), //TODO hotel city
                       style: TextStyle(fontSize: 15),
                     ),
                     Spaces.spaceH8,

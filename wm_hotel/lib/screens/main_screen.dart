@@ -25,7 +25,6 @@ class _MainScreenState extends State<MainScreen> {
           HomeScreen(),
           OrdersScreen(), //
         ],
-        
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,
