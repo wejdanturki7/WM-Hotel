@@ -16,7 +16,7 @@ A new Flutter project is a management reservation hotel app.
 
 
 ### Sort hotel by city
--Here we see Doha hotels.
+-Here we see Doha hotels./
 <img width="276" alt="This is a home page" src="wm_hotel/assets/Screens_for_Readme/Screen4.PNG">
 
 ### Search in hotel by name
