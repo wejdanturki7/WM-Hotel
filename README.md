@@ -5,7 +5,7 @@ A new Flutter project is a management reservation hotel app.
 ## App Screens:
 
 ### This is the Signup screen 
-<img width="276" alt="This is a Spalsh page" src="/WM-Hotel/wm_hotel/assets/Screens_for_Readme/Screen1.PNG">
+<img width="276" alt="This is a Spalsh page" src="/wm_hotel/assets/Screens_for_Readme/Screen1.PNG">
 
 ### This is a login screen 
 <img width="276" alt="This is a init page" src="../assets/Screens_for_Readme/Screen2.png">
